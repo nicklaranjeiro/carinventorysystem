@@ -1,4 +1,4 @@
-# CodeAssessment
+# Code Assessment
 
 Created a car inventory system and keeps track of cars using an API by using MongoDB and Express. The application also allows users to edit the status of the car. The page uses multiple schematics from Angular Material. It has navigation, a dashboard with filler data and a table containing all of the cars.
 
