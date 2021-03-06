@@ -13,4 +13,8 @@ export class CarService {
   getCars(){
     return this.wrService.get();
   }
+
+  updateCar(id: string, status: string){
+    return this.wrService.patch(id, { status });
+  }
 }

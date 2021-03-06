@@ -22,6 +22,7 @@ export class InventoryComponent implements AfterViewInit, OnInit {
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['stocknumber', 'year', 'make', 'model', 'trim', 'status', 'vin', 'instockdate'];
+  names = [ "In Stock", "Sold", "Deal Pending", "In Trade"];
 
   ngOnInit() {
     this.dataSource = new InventoryDataSource();
@@ -45,6 +46,13 @@ export class InventoryComponent implements AfterViewInit, OnInit {
       this.table.dataSource = data;
       console.log(data);
       return data;
+    });
+  }
+
+  updateStatus(newStatus, id){
+    console.log(newStatus.target.value);
+    this.carService.updateCar(id, newStatus.target.value).subscribe(() =>{
+
     });
   }
 }

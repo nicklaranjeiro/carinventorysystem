@@ -8,8 +8,6 @@ import { InventoryItem } from './inventory/inventory-datasource';
 })
 export class WebRequestService {
 
-  readonly ROOT_URL;
-
   constructor(private http: HttpClient) { 
   }
 
@@ -21,7 +19,9 @@ export class WebRequestService {
   //   return this.http.post('${this.ROOT_URL}/${url}', payload);
   // }
 
-  // patch(uri: string, payload: Object){
-  //   return this.http.patch('${this.ROOT_URL}/${url}', payload);
-  // }
+  patch(id, payload: Object){
+    console.log('http://localhost:3000/inventory/' + id);
+
+    return this.http.patch('http://localhost:3000/inventory/' + id, payload);
+  }
 }
